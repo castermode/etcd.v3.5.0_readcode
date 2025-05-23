@@ -1,0 +1,3 @@
+
+./etcdctl --endpoints=http://localhost:2379,http://localhost:2479,http://localhost:2579 endpoint health
+

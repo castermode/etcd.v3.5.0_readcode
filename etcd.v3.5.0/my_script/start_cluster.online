@@ -1,0 +1,8 @@
+
+
+./etcd --name node1 --data-dir=/tmp/etcd/node1 --listen-client-urls http://0.0.0.0:12379 --advertise-client-urls http://127.0.0.1:12379 --listen-peer-urls http://0.0.0.0:12380 --initial-advertise-peer-urls http://127.0.0.1:12380 --initial-cluster node1=http://127.0.0.1:12380,node2=http://127.0.0.1:22380,node3=http://127.0.0.1:32380 --initial-cluster-token etcd-cluster-1 --initial-cluster-state new > msg.etcd1.log 2>&1 
+
+./etcd --name node2 --data-dir=/tmp/etcd/node2 --listen-client-urls http://0.0.0.0:22379 --advertise-client-urls http://127.0.0.1:22379 --listen-peer-urls http://0.0.0.0:22380 --initial-advertise-peer-urls http://127.0.0.1:22380 --initial-cluster node1=http://127.0.0.1:12380,node2=http://127.0.0.1:22380,node3=http://127.0.0.1:32380 --initial-cluster-token etcd-cluster-1 --initial-cluster-state new > msg.etcd2.log 2>&1 
+
+./etcd --name node3 --data-dir=/tmp/etcd/node3 --listen-client-urls http://0.0.0.0:32379 --advertise-client-urls http://127.0.0.1:32379 --listen-peer-urls http://0.0.0.0:32380 --initial-advertise-peer-urls http://127.0.0.1:32380 --initial-cluster node1=http://127.0.0.1:12380,node2=http://127.0.0.1:22380,node3=http://127.0.0.1:32380 --initial-cluster-token etcd-cluster-1 --initial-cluster-state new > msg.etcd3.log 2>&1 
+
